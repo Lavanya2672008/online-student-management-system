@@ -2,8 +2,11 @@ CREATE DATABASE IF NOT EXISTS student_details;
 
 USE student_details;
 
--- Users table
-CREATE TABLE users (
+-- ==========================================
+-- USERS TABLE
+-- ==========================================
+
+CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
@@ -11,8 +14,12 @@ CREATE TABLE users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Students table
-CREATE TABLE students (
+
+-- ==========================================
+-- STUDENTS TABLE
+-- ==========================================
+
+CREATE TABLE IF NOT EXISTS students (
     id INT AUTO_INCREMENT PRIMARY KEY,
     student_id VARCHAR(50) NOT NULL UNIQUE,
     name VARCHAR(150) NOT NULL,
@@ -26,8 +33,12 @@ CREATE TABLE students (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Attendance table
-CREATE TABLE attendance (
+
+-- ==========================================
+-- ATTENDANCE TABLE
+-- ==========================================
+
+CREATE TABLE IF NOT EXISTS attendance (
     id INT AUTO_INCREMENT PRIMARY KEY,
     student_id VARCHAR(50) NOT NULL,
     subject VARCHAR(100) NOT NULL,
@@ -36,8 +47,12 @@ CREATE TABLE attendance (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Marks table
-CREATE TABLE marks (
+
+-- ==========================================
+-- MARKS TABLE
+-- ==========================================
+
+CREATE TABLE IF NOT EXISTS marks (
     id INT AUTO_INCREMENT PRIMARY KEY,
     student_id VARCHAR(50) NOT NULL,
     subject VARCHAR(100) NOT NULL,
@@ -47,8 +62,12 @@ CREATE TABLE marks (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Leaves table
-CREATE TABLE leaves (
+
+-- ==========================================
+-- LEAVES TABLE
+-- ==========================================
+
+CREATE TABLE IF NOT EXISTS leaves (
     id INT AUTO_INCREMENT PRIMARY KEY,
     student_id VARCHAR(50) NOT NULL,
     from_date DATE NOT NULL,
